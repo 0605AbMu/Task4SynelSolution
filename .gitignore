@@ -9,3 +9,5 @@
 /src/Task.Service/obj/
 /src/Task.UnitTest/bin/
 /src/Task.UnitTest/obj/
+/src/Task.Web/bin/
+/src/Task.Web/obj/

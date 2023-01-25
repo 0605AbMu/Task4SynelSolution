@@ -1,7 +1,7 @@
 using Task.App.Entities;
 using Task.App.Repositories;
 
-namespace Task.Service.Services;
+namespace Task.Application.Services;
 
 public class EmployeeService: IEmployeeService
 {
@@ -11,33 +11,33 @@ public class EmployeeService: IEmployeeService
         this.employeeRepository = employeeRepository;
     }
 
-    public async ValueTask<IQueryable<Employee>> RetrieveAll()
+    public async ValueTask<IQueryable<Employee>> RetrieveAllAsync()
     {
         return await this.employeeRepository
             .FindAllAsync(null);
     }
 
-    public async ValueTask<Employee> RetrieveById(Guid id)
+    public async ValueTask<Employee> RetrieveByIdAsync(Guid id)
     {
         return await this.employeeRepository
             .FindByExpressionAsync(expression: (employee => employee.Id.Equals(id)));
     }
 
-    public async ValueTask<Employee> Create(Employee employee)
+    public async ValueTask<Employee> CreateAsync(Employee employee)
     {
         return await this.employeeRepository
             .CreateAsync(employee);
     }
 
-    public async ValueTask<Employee> Modify(Guid id, Employee employee)
+    public async ValueTask<Employee> ModifyAsync(Employee employee)
     {
         return await this.employeeRepository
-            .CreateAsync(employee);
+            .UpdateAsync(employee);
     }
 
-    public async ValueTask<Employee> Remove(Guid id)
+    public async ValueTask<Employee> RemoveAsync(Guid id)
     {
-        Employee employee = await this.RetrieveById(id);
+        Employee employee = await this.RetrieveByIdAsync(id);
         if (employee is null)
             throw new Exception("User not found");
 
