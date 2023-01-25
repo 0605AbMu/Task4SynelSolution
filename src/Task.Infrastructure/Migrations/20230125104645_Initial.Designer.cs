@@ -12,7 +12,7 @@ using Task.App.DataBaseContext;
 namespace Test.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230125070502_Initial")]
+    [Migration("20230125104645_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -55,6 +55,10 @@ namespace Test.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Payroll")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PostCode")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -74,6 +78,38 @@ namespace Test.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Employees", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("a815e489-caab-42de-86a5-5d2a5b7c298c"),
+                            Address = "12 Foreman road",
+                            Address2 = "London",
+                            DateOfBirth = "26/01/1955",
+                            Email = "nomadic20@hotmail.co.uk",
+                            Forename = "John ",
+                            Mobile = "987654231",
+                            Payroll = "COOP08",
+                            PostCode = "GU12 6JW",
+                            StartDate = "18/04/2013",
+                            Surname = "William",
+                            Telephone = "12345678"
+                        },
+                        new
+                        {
+                            Id = new Guid("5d4e6479-6a42-485b-bec9-aa560fa31cdd"),
+                            Address = "115 Spinney Road",
+                            Address2 = "Luton",
+                            DateOfBirth = "11/5/1974",
+                            Email = "gerry.jackson@bt.com",
+                            Forename = "Jerry",
+                            Mobile = "6987457",
+                            Payroll = "JACK13",
+                            PostCode = "LU33DF",
+                            StartDate = "18/04/2013",
+                            Surname = "Jackson",
+                            Telephone = "2050508"
+                        });
                 });
 #pragma warning restore 612, 618
         }

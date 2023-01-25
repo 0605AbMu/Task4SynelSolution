@@ -7,7 +7,7 @@ builder.Services.AddControllersWithViews();
 
 //Configure services
 builder.Services.ConfigureDataBase(builder.Configuration);
-
+builder.Services.ConfigureRepositories();
 
 var app = builder.Build();
 
@@ -24,10 +24,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}");
 
+app.ApplyMigration();
 app.Run();
