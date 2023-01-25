@@ -1,3 +1,11 @@
 /.idea/
 /src/Task.App/bin/
 /src/Task.App/obj/
+/src/Task.Domain/bin/
+/src/Task.Domain/obj/
+/src/Task.Infrastructure/bin/
+/src/Task.Infrastructure/obj/
+/src/Task.Service/bin/
+/src/Task.Service/obj/
+/src/Task.UnitTest/bin/
+/src/Task.UnitTest/obj/
