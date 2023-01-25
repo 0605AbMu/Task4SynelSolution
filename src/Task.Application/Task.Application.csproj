@@ -5,6 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>Task.Service</RootNamespace>
+        <UserSecretsId>a83386c3-7f1b-416f-a6cc-15c8a5b2f2f8</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
