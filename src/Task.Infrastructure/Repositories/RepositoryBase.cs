@@ -8,10 +8,11 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 {
     private readonly AppDbContext dbContext;
 
-    public RepositoryBase(AppDbContext dbContext)
+    public RepositoryBase(AppDbContext appDbContext)
     {
-        dbContext = dbContext;
+        dbContext = appDbContext;
     }
+
     public async ValueTask<IQueryable<T>> FindAllAsync(string[] includes = null, bool trackChanges = true)
     {
         DbSet<T> dbSet = this.dbContext
@@ -35,9 +36,16 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
         return (
                 await this.dbContext
-                .Set<T>()
-                .AddAsync(entity))
+                    .Set<T>()
+                    .AddAsync(entity))
             .Entity;
+    }
+
+    public async ValueTask CreateRangeAsync(IQueryable<T> entities)
+    {
+        await this.dbContext
+            .Set<T>()
+            .AddRangeAsync(entities);
     }
 
     public async ValueTask<T> UpdateAsync(T entity)
@@ -54,5 +62,10 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
             .Set<T>()
             .Remove(entity)
             .Entity;
+    }
+
+    public async ValueTask SaveChangesAsync()
+    {
+        await this.dbContext.SaveChangesAsync();
     }
 }
