@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Folder Include="Filter" />
       <Folder Include="wwwroot\css" />
-      <Folder Include="wwwroot\js" />
     </ItemGroup>
 
     <ItemGroup>
@@ -21,10 +21,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Task.Infrastructure\Task.Infrastructure.csproj" />
+      <ProjectReference Include="..\Task.Application\Task.Application.csproj" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.AspNet.Http.Features" Version="1.0.0-rc1-final" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

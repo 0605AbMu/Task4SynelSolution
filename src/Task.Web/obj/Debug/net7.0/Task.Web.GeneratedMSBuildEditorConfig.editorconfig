@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/0605AbMu/RiderProjects/Task4SynelSolution/src/Task.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/0605AbMu/RiderProjects/Task4SynelSolution/src/Task.Web/Views/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/0605AbMu/RiderProjects/Task4SynelSolution/src/Task.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/0605AbMu/RiderProjects/Task4SynelSolution/src/Task.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
