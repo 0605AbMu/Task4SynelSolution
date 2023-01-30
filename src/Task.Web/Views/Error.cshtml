@@ -1,0 +1,12 @@
+@page
+@using Task.App.ViewModel;
+@model ErrorViewModel;
+
+@{
+    Layout = "_Layout";
+}
+
+<script>
+window.alert("Error: @Model.Message");
+window.location.reload();
+</script>
